@@ -3,33 +3,89 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.project {
-    width: 300px;
+.product-grid {
+    display: grid;
+    grid-template-areas:
+    "new new best"
+    "new new low-light"
+    "easy-care easy-care low-light" 
+    "small medium large"
+    "small medium large"
+    "planter planter plant-care";
+    gap: 16px;
+    /* grid-auto-rows: minmax(auto, 600px); */
+    width: 100%;
+    max-width: 90%;
+}
+
+#new {
+    grid-area: new;
+}
+
+#best {
+    grid-area: best;
+}
+
+#easy-care {
+    grid-area: easy-care;
+}
+
+#low-light {
+    grid-area: low-light;
+}
+
+#small {
+    grid-area: small;
+}
+
+#medium {
+    grid-area: medium;
+}
+
+#large {
+    grid-area: large;
+}
+
+#planter {
+    grid-area: planter;
+}
+
+#plant-care {
+    grid-area: plant-care;
+}
+
+.product {
+    /* width: 600px; */
     position: relative;
 }
 
-.project img {
+.product img {
     width: 100%;
     object-fit: cover;
     height: 100%;
 }
 
-.project .overlay {
-    background-color: rgba(255, 255, 255, 0.1);
+.product .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 1rem;
+    left: 1rem;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     margin: 0;
-    opacity: 0;
-    
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
 }
 
-.project .overlay:hover {
-    opacity: 1;
+.product .overlay:hover {
     cursor: pointer;
+    font-style: italic;
+    color: greenyellow;
+}
+
+.overlay.white {
+    color: white;
 }
