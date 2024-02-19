@@ -3,19 +3,24 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
 .product-grid {
     display: grid;
     grid-template-areas:
-    "new new best"
-    "new new low-light"
-    "easy-care easy-care low-light" 
-    "small medium large"
-    "small medium large"
-    "planter planter plant-care";
+        "new new best"
+        "new new low-light"
+        "easy-care easy-care low-light"
+        "small medium large"
+        "small medium large"
+        "planter planter plant-care";
     gap: 16px;
     /* grid-auto-rows: minmax(auto, 600px); */
     width: 100%;
-    max-width: 90%;
 }
 
 #new {
@@ -88,4 +93,37 @@ body {
 
 .overlay.white {
     color: white;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1100px) {
+    .container {
+        max-width: 100%;
+    }
+    .product-grid {
+        max-width: 100%;
+        grid-template-areas:
+            "new best"
+            "easy-care easy-care"
+            "low-light small"
+            "medium large"
+            "plant-care plant-care"
+            "planter planter";
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product-grid {
+        max-width: 100%;
+        grid-template-areas:
+            "new"
+            "best"
+            "easy-care"
+            "low-light"
+            "small"
+            "medium"
+            "large"
+            "plant-care"
+            "planter";
+    }
 }
