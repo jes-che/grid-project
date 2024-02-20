@@ -9,6 +9,41 @@ body {
     padding: 0 16px;
 }
 
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 64px 0;
+}
+
+.navbar .left {
+    font-size: 2rem;
+    /* font-weight: bold; */
+}
+
+.navbar .right {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .right a {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.navbar .right a:hover {
+    transform: scale(1.15);
+}
+
+.navbar .right img {
+    width: 36px;
+    height: 36px;
+}
+
+/* PRODUCT GRID */
 .product-grid {
     display: grid;
     grid-template-areas:
