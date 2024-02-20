@@ -13,7 +13,7 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin: 64px 0;
+    padding: 64px 0;
 }
 
 .navbar .left {
@@ -41,6 +41,18 @@ body {
 .navbar .right img {
     width: 36px;
     height: 36px;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: black;
+    width: 36px;
+    height: 4px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.navbar .hamburger {
+    display: none;
 }
 
 /* PRODUCT GRID */
@@ -133,7 +145,7 @@ body {
 /* FOOTER */
 .footer {
     text-align: center;
-    margin: 64px;
+    padding: 64px;
 }
 
 /* RESPONSIVE */
@@ -154,6 +166,26 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    .navbar {
+        box-sizing: border-box;
+        padding: 16px 24px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: white;
+        width: 100%;
+    }
+    .navbar .right {
+        display: none;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .product-grid {
         max-width: 100%;
         grid-template-areas:
@@ -166,5 +198,6 @@ body {
             "large"
             "plant-care"
             "planter";
+        margin-top: 100px;
     }
 }
