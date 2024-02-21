@@ -156,6 +156,7 @@ body {
 }
 
 .product .overlay {
+    color: black;
     position: absolute;
     top: 1rem;
     left: 1rem;
