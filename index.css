@@ -174,7 +174,6 @@ body {
 }
 
 .product .overlay:hover {
-    cursor: pointer;
     font-style: italic;
     color: greenyellow;
 }
