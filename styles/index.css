@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 0;
+}
+
+.navbar .left {
+    font-size: 2rem;
+}
+
+.navbar .right {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .right a {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.navbar .right a:hover {
+    transform: scale(1.15);
+}
+
+.navbar .right img {
+    width: 36px;
+    height: 36px;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: black;
+    width: 36px;
+    height: 4px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.navbar .hamburger {
+    display: none;
+}
+
+.navbar .hamburger:hover {
+    cursor: pointer;
+}
+
+.mobileNav {
+    width: 80px;
+    height: 100vh;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -160px;
+    padding: 16px;
+    transition: transform 0.5s;
+}
+
+.mobileNav img {
+    width: 36px;
+    height: 36px;
+}
+
+.mobileNav a {
+    text-decoration: none;
+    color: black;
+    margin: 16px 0;
+    transition: transform 0.2s ease;
+}
+
+.mobileNav a:hover {
+    transform: scale(1.15);
+}
+
+.openDrawer {
+    transform: translateX(-160px);
+}
+
+/* PRODUCT GRID */
+.product-grid {
+    display: grid;
+    grid-template-areas:
+        "new new best"
+        "new new low-light"
+        "easy-care easy-care low-light"
+        "small medium large"
+        "small medium large"
+        "planter planter plant-care";
+    gap: 16px;
+    /* grid-auto-rows: minmax(auto, 600px); */
+    width: 100%;
+}
+
+#new {
+    grid-area: new;
+}
+
+#best {
+    grid-area: best;
+}
+
+#easy-care {
+    grid-area: easy-care;
+}
+
+#low-light {
+    grid-area: low-light;
+}
+
+#small {
+    grid-area: small;
+}
+
+#medium {
+    grid-area: medium;
+}
+
+#large {
+    grid-area: large;
+}
+
+#planter {
+    grid-area: planter;
+}
+
+#plant-care {
+    grid-area: plant-care;
+}
+
+.product {
+    position: relative;
+}
+
+.product a {
+    color: black;
+}
+
+.product img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.product .overlay {
+    color: black;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.product .overlay:hover {
+    font-style: italic;
+    color: greenyellow;
+}
+
+.overlay.white {
+    color: white;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 64px;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1100px) {
+    .container {
+        max-width: 100%;
+    }
+    .product-grid {
+        max-width: 100%;
+        grid-template-areas:
+            "new best"
+            "easy-care easy-care"
+            "low-light small"
+            "medium large"
+            "plant-care plant-care"
+            "planter planter";
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        box-sizing: border-box;
+        padding: 16px 24px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: white;
+        width: 100%;
+    }
+
+    .navbar .left {
+        font-size: 1.5rem;
+    }
+
+    .navbar .right {
+        display: none;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+
+    .product-grid {
+        max-width: 100%;
+        grid-template-areas:
+            "new"
+            "best"
+            "easy-care"
+            "low-light"
+            "small"
+            "medium"
+            "large"
+            "plant-care"
+            "planter";
+        margin-top: 100px;
+    }
+
+    .product .overlay {
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 32px;
+    }
+}
+
+/* NAVBAR ANIMATIONS */
+.animateBar1 {
+    animation: flipBar1 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.animateBar2 {
+    animation: fadeBar2 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.animateBar3 {
+    animation: flipBar3 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipBar1 {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(45deg) translate(4px, 10px);
+    }
+}
+
+@keyframes fadeBar2 {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes flipBar3 {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-45deg) translate(4px, -10px);
+    }
+}
