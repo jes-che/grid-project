@@ -105,7 +105,6 @@ body {
         "small medium large"
         "planter planter plant-care";
     gap: 16px;
-    /* grid-auto-rows: minmax(auto, 600px); */
     width: 100%;
 }
 
